@@ -1,11 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { XellarKitProvider, lightTheme } from "@xellar/kit";
+import { XellarKitProvider, darkTheme, lightTheme } from "@xellar/kit";
 import { WagmiProvider } from "wagmi";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { config } from "@/lib/wagmi";
-import { pharosChain } from "@/lib/data/chain-data";
 import Navbar from "@/components/navbar";
 import { Toaster } from "sonner";
 import Providers from "@/app/Providers";
@@ -20,7 +19,7 @@ export default function ClientProviders({
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
-        <XellarKitProvider theme={lightTheme}
+        <XellarKitProvider theme={darkTheme}
         showConfirmationModal={true}
         >
           <div className="">
