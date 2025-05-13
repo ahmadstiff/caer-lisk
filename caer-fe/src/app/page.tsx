@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import SplashCursor from '@/components/ui/SplashCursor'
 import Link from "next/link";
 
-
 export default function Home() {
   const words = [
     {
