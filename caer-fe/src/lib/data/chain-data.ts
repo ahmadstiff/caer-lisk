@@ -1,21 +1,21 @@
 import { defineChain } from "viem";
 
-export const pharosChain = defineChain({
-  id: 50002,
-  name: "Pharos Devnet",
+export const liskChain = defineChain({
+  id: 4202,
+  name: "Lisk Sepolia",
   nativeCurrency: { name: "ETH", symbol: "ETH", decimals: 18 },
   rpcUrls: {
-    default: { http: ["https://devnet.dplabs-internal.com/"] },
+    default: { http: ["https://rpc.sepolia-api.lisk.com/"] },
   },
   blockExplorers: {
     default: {
       name: "Blockscout",
-      url: "https://pharosscan.xyz/",
+      url: "https://sepolia-blockscout.lisk.com/",
     },
   },
   testnet: true,
   iconBackground: "#ffff",
-  iconUrl: "/pharos-logo.jpg"
+  iconUrl: "/lisk-logo.png"
 });
 
 export const optimismSepolia = defineChain({
