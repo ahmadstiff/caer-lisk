@@ -3,18 +3,17 @@ import { liskChain, optimismSepolia } from "./data/chain-data";
 import { chain_id } from "@/constants/addresses";
 import { defaultConfig } from "@xellar/kit";
 
-const walletConnectProjectId = "0ae29482f8325d6cb88bf255b4339ab8";
-const xellarAppId = "ea081076-c9cb-47b3-944c-ad4f37638fe9";
+const walletConnectProjectId = process.env
+  .NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID as string;
+const xellarAppId = process.env.NEXT_PUBLIC_XELLAR_APP_ID as string;
 
 export const config = defaultConfig({
   appName: "Caer-Lisk",
   walletConnectProjectId,
   xellarAppId,
   xellarEnv: "sandbox",
-  chains: [ chain_id === 50002 ? liskChain : optimismSepolia],
+  chains: [chain_id === 4202 ? liskChain : optimismSepolia],
   transports: {
-    [chain_id === 50002 ? liskChain.id : optimismSepolia.id]: http(),
+    [chain_id === 4202 ? liskChain.id : optimismSepolia.id]: http(),
   },
 }) as Config;
-
-

@@ -15,12 +15,12 @@ export const liskChain = defineChain({
   },
   testnet: true,
   iconBackground: "#ffff",
-  iconUrl: "/lisk-logo.png"
+  iconUrl: "/lisk-logo.png",
 });
 
 export const optimismSepolia = defineChain({
   id: 11155420,
-  name: "Pharos",
+  name: "Lisk",
   nativeCurrency: { name: "ETH", symbol: "ETH", decimals: 18 },
   rpcUrls: {
     default: { http: ["https://sepolia.optimism.io/"] },
@@ -33,6 +33,5 @@ export const optimismSepolia = defineChain({
   },
   testnet: true,
   iconBackground: "#ffff",
-  iconUrl: "/pharos-logo.jpg"
+  iconUrl: "/lisk-logo.png",
 });
-

@@ -22,7 +22,7 @@ export default function Home() {
       text: "by",
     },
     {
-      text: "PHAROS.",
+      text: "LISK.",
       className: "text-[#131BEB]",
     },
   ];

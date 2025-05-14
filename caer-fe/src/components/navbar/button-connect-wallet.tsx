@@ -1,8 +1,6 @@
 "use client";
 import { ConnectButton } from "@xellar/kit";
-import { Chain } from 'viem';
 import { BackgroundGradient } from "../ui/background-gradient";
-import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 
 const ButtonConnectWallet = () => {
@@ -10,45 +8,57 @@ const ButtonConnectWallet = () => {
     <ConnectButton.Custom>
       {({
         account,
-        isConnected,
+        chain,
         openConnectModal,
         openProfileModal,
         openChainModal,
-        chain,
       }) => {
+        const isConnected = !!account && !!chain;
         const address = account?.address;
 
         return (
           <div className="flex items-center gap-4">
-            <div className="relative group">
+            {isConnected ? (
+              <>
+                {/* Chain Button */}
+                <div className="relative group">
+                  <BackgroundGradient className="rounded-3xl p-[2px]">
+                    <button
+                      onClick={openChainModal}
+                      className="flex items-center justify-center space-x-2 px-3 py-1.5 rounded-3xl bg-white text-[#07094d] hover:opacity-90 font-medium transition-all"
+                    >
+                      <img
+                        src="/lisk-logo.png"
+                        alt="Logo"
+                        className="w-6 h-6 rounded-full"
+                      />
+                      <span>{chain?.name}</span>
+                      <ChevronDown className="w-4 h-4 opacity-70" />
+                    </button>
+                  </BackgroundGradient>
+                </div>
+
+                {/* Address/Profile Button */}
+                <BackgroundGradient className="rounded-3xl p-[2px]">
+                  <button
+                    onClick={openProfileModal}
+                    className="flex items-center justify-center space-x-1 px-3 py-1.5 rounded-3xl bg-white text-[#07094d] hover:opacity-90 font-medium transition-all"
+                  >
+                    {`${address?.slice(0, 6)}...${address?.slice(-4)}`}
+                  </button>
+                </BackgroundGradient>
+              </>
+            ) : (
+              // Single connect wallet button when not connected
               <BackgroundGradient className="rounded-3xl p-[2px]">
                 <button
-                  onClick={isConnected ? openChainModal : openConnectModal}
-                  className="flex items-center justify-center space-x-1 px-3 py-1.5 rounded-3xl bg-white text-[#07094d] hover:opacity-90 font-medium transition-all"
+                  onClick={openConnectModal}
+                  className="flex items-center justify-center px-4 py-1.5 rounded-3xl bg-white text-[#07094d] hover:opacity-90 font-medium transition-all"
                 >
-                  {}
-                  <img
-                    src="/lisk-logo.png"
-                    alt="Logo"
-                    className="w-7 h-7 rounded-full"
-                    style={{ objectPosition: "center" }}
-                  />
-                  <span>{chain?.name}</span>
-                  <ChevronDown className="w-4 h-4 ml-1 opacity-70" />
+                  Connect Wallet
                 </button>
               </BackgroundGradient>
-            </div>
-
-            <BackgroundGradient className="rounded-3xl p-[2px]">
-              <button
-                onClick={isConnected ? openProfileModal : openConnectModal}
-                className="flex items-center justify-center space-x-1 px-3 py-2 rounded-3xl bg-white text-[#07094d] hover:opacity-90 font-medium transition-all"
-              >
-                {isConnected
-                  ? `${address?.slice(0, 6)}...${address?.slice(-4)}`
-                  : "Connect Wallet"}
-              </button>
-            </BackgroundGradient>
+            )}
           </div>
         );
       }}

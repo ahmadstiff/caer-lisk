@@ -3,9 +3,15 @@
 import { useAccount, useReadContract } from "wagmi";
 import { formatUnits } from "viem/utils";
 import { useState, useEffect } from "react";
-import { mockUsdc, mockWeth, mockWbtc, mockUsdt, chain_id } from "@/constants/addresses";
+import {
+  mockUsdc,
+  mockWeth,
+  mockWbtc,
+  mockUsdt,
+  chain_id,
+} from "@/constants/addresses";
 import { Address, createPublicClient, erc20Abi, http } from "viem";
-import { pharosChain } from "@/lib/data/chain-data";
+import { liskChain } from "@/lib/data/chain-data";
 import { optimismSepolia } from "viem/chains";
 export const useTokenBalance = (tokenAddress: Address, decimals: number) => {
   const { address } = useAccount();
@@ -151,9 +157,8 @@ export const useWethBalance = () => {
   return balance;
 };
 
-
 const publicClient = createPublicClient({
-  chain: chain_id === 50002 ? pharosChain : optimismSepolia,
+  chain: chain_id === 4202 ? liskChain : optimismSepolia,
   transport: http(),
 });
 

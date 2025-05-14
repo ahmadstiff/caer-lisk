@@ -19,18 +19,18 @@ export default function ChainSelector({
     selectorType === "from"
       ? [
           {
-            id: 50002,
-            name: "Pharos Devnet",
+            id: 4202,
+            name: "Lisk Sepolia",
             type: "Testnet",
-            logoUrl: "/pharos-logo.jpg",
+            logoUrl: "/lisk-logo.png",
           },
         ]
       : [
           {
-            id: 50002,
-            name: "Pharos Devnet",
+            id: 4202,
+            name: "Lisk Sepolia",
             type: "Testnet",
-            logoUrl: "/pharos-logo.jpg",
+            logoUrl: "/lisk-logo.png",
           },
           {
             id: 421614,
@@ -64,7 +64,7 @@ export default function ChainSelector({
           <div className="flex items-center">
             <span className="font-medium">Sort</span>
             <Button variant="ghost" className="ml-2 text-sm cursor-pointer">
-              Routes From Pharos Devnet <ChevronDown className="h-4 w-4 ml-1" />
+              Routes From LISK Sepolia <ChevronDown className="h-4 w-4 ml-1" />
             </Button>
           </div>
           <div className="flex items-center">
@@ -103,13 +103,13 @@ export default function ChainSelector({
               </div>
 
               <div className="text-right">
-                {chain.name === "Pharos Devnet" ? (
+                {chain.name === "Lisk Sepolia" ? (
                   <p className="text-gray-600">0 route</p>
                 ) : (
                   <p className="text-gray-600">1 route</p>
                 )}
                 <p className="text-sm text-gray-500">
-                  Routes from Pharos Devnet
+                  Routes from Lisk Sepolia
                 </p>
               </div>
             </button>

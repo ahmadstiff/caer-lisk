@@ -24,23 +24,23 @@ const BorrowSection = ({
   lpAddress,
 }: BorrowSectionProps) => {
   const [fromChain, setFromChain] = useState<Chain>({
-    id: 50002,
-    name: "Pharos Devnet",
+    id: 4202,
+    name: "Lisk Sepolia",
     type: "Testnet",
-    logoUrl: "/pharos-logo.jpg",
+    logoUrl: "/lisk-logo.png",
   });
   const [toChain, setToChain] = useState<Chain>({
-    id: 50002,
-    name: "Pharos Devnet",
+    id: 4202,
+    name: "Lisk Sepolia",
     type: "Testnet",
-    logoUrl: "/pharos-logo.jpg",
+    logoUrl: "/lisk-logo.png",
   });
   const [amount, setAmount] = useState("");
   const [recipientAddress, setRecipientAddress] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [txCompleted, setTxCompleted] = useState(false);
 
-  const isOnChainTransaction = fromChain.id === 50002 && toChain.id === 50002;
+  const isOnChainTransaction = fromChain.id === 4202 && toChain.id === 4202;
 
   // Handle transaction success
   const handleTransactionSuccess = useCallback(() => {
@@ -129,8 +129,8 @@ const BorrowSection = ({
         {isOnChainTransaction && (
           <div className="p-3 bg-blue-50 rounded-lg">
             <p className="text-sm text-blue-600">
-              <strong>On-chain Transaction:</strong> Borrowing directly on Pharos
-              Chain using your position.
+              <strong>On-chain Transaction:</strong> Borrowing directly on
+              Lisk Chain using your position.
             </p>
           </div>
         )}

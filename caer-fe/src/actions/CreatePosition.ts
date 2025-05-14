@@ -3,14 +3,14 @@
 import { PrismaClient } from "@prisma/client";
 import { createPublicClient } from "viem";
 import { http } from "wagmi";
-import { pharosChain } from "@/lib/data/chain-data";
+import { liskChain } from "@/lib/data/chain-data";
 import { poolAbi } from "@/lib/abi/poolAbi";
 import { chain_id } from "@/constants/addresses";
 import { optimismSepolia } from "viem/chains";
 const prisma = new PrismaClient();
 
 const publicClient = createPublicClient({
-  chain: chain_id === 50002 ? pharosChain : optimismSepolia,
+  chain: chain_id === 4202 ? liskChain : optimismSepolia,
   transport: http(),
 });
 
