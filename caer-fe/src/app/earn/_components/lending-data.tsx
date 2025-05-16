@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { ConnectButton } from "@xellar/kit";
 import { useAccount } from "wagmi";
 import { getAllLPFactoryData } from "@/actions/GetLPFactory";
 import DialogCreatePool from "./DialogCreatePool";
