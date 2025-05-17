@@ -11,13 +11,14 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import { mockUsdc, mockUsdt, mockWeth, mockWbtc } from "@/constants/addresses";
+import { mockUsdc, mockUsdt, mockWeth, mockWbtc,idrxTestnet } from "@/constants/addresses";
 import { TOKEN_OPTIONS } from "@/constants/tokenOption";
 import {
   useUsdcBalance,
   useUsdtBalance,
   useWbtcBalance,
   useWethBalance,
+  useIdrxBalance,
 } from "@/hooks/useTokenBalance";
 import { useSupply } from "@/hooks/write/useSupply";
 import { CreditCard, DollarSign, Loader2 } from "lucide-react";
@@ -35,6 +36,8 @@ const getTokenBalance = (token: string) => {
       return useWethBalance();
     case mockWbtc:
       return useWbtcBalance();
+    case idrxTestnet:
+      return useIdrxBalance();
     default:
       return "0";
   }
@@ -107,7 +110,7 @@ const DialogSupply = ({
             <div className="flex items-center gap-2">
               <CreditCard className="h-6 w-6 text-blue-500" />
               <DialogTitle className="text-xl font-bold text-slate-800">
-                Supply USDC
+                Supply {getTokenName}
               </DialogTitle>
               <DialogDescription className="hidden">Fixed the warning</DialogDescription>
             </div>
@@ -124,7 +127,7 @@ const DialogSupply = ({
 
                 <div className="flex items-center space-x-2 bg-slate-50 p-2 rounded-lg border border-slate-200">
                   <Input
-                    placeholder="Enter amount of USDC to supply"
+                    placeholder={`Enter amount of ${getTokenName} to supply`}
                     value={amount}
                     onChange={(e) => {
                       const value = e.target.value;

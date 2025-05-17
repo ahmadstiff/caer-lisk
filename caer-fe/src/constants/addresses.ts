@@ -1,12 +1,12 @@
 import { Address } from "viem";
 
 export const chain_id: number = 4202;
-// export const chain_id: number = 11155420;
 
 let temp_mockWeth;
 let temp_mockWbtc;
 let temp_mockUsdc;
 let temp_mockUsdt;
+let temp_idrxTestnet;
 let temp_mockPepe;
 let temp_mockBnvda;
 let temp_mockSaapl;
@@ -17,23 +17,22 @@ let temp_lendingPool;
 let temp_lendingPoolSequencer;
 let temp_position;
 
-// Lisk
-/****************************************************************************** */
 if (chain_id === 4202) {
-  temp_mockWeth = "0x18858A62e46DCb501F1c69893ee0f7F2323581a5" as Address;
-  temp_mockWbtc = "0xa0624E61a525Ba2A71B793413a89F9a624646081" as Address;
-  temp_mockUsdc = "0x42260072BbfaD1b50AD01C8aAdeA5dE345f2E752" as Address;
-  temp_mockUsdt = "0x6399a0cbEcB277CaCA35A907B3BA3A8079C0bE7b" as Address;
-  temp_mockPepe = "0x4a363F2dE88567623Ff351584Eb9d8B71CD1fEb8" as Address;
-  temp_mockBnvda = "0x33E4Ca17132C90a062a692F062C94Ef3d4D727bA" as Address;
-  temp_mockSaapl = "0xfb776096EbDfFEf3C4FAb6076a4950445Ae33f8f" as Address;
-  temp_mockPaxg = "0x1EFE2c1EcDf8511538d2aDc20Bae9417b8b6f359" as Address;
-  temp_priceFeed = "0x671f33611ca94095fD4f06d539b0F2c13e70F362" as Address;
-  temp_factory = "0xF64b9a1bbD331eB5e3Fa5c80fe9417E1A3F96F12" as Address;
-  temp_lendingPool = "0x9F19f49DA9D24382892a78D8d966441DCc4ee89b" as Address;
+  temp_mockWeth = "0x14b69D0cE99E8B32962b98F59368CF68DCF4e600" as Address;
+  temp_mockWbtc = "0x74CC1f4D08663dad7E29E1718c21553BF644844B" as Address;
+  temp_mockUsdc = "0x6E87c01682E547Bf69c73B5F0A1b4aAAE91A1EE1" as Address;
+  temp_mockUsdt = "0x4c06cFCbfAc822251E5003eF1A02C469d7Af2e01" as Address;
+  temp_idrxTestnet = "0xD63029C1a3dA68b51c67c6D1DeC3DEe50D681661" as Address;
+  temp_mockPepe = "0xf4A0676771A422fCb6EfCdFBB9799fF2164C4bE9" as Address;
+  temp_mockBnvda = "0x880416Aabcb16A7a29356a8ac23e846A27b9C561" as Address;
+  temp_mockSaapl = "0xB6f3324A7E20d98C04D6D65d2A4F1fa0E8BBcCfB" as Address;
+  temp_mockPaxg = "0xE2e80F81589C80Cb1d20A7846A350644281E0177" as Address;
+  temp_priceFeed = "0x0D25DA20e2579eA613E9160C666CA4C4f1C62898" as Address;
+  temp_factory = "0x4CA9964bA32016F6Ba043Bfefc17BFf45E73469e" as Address;
+  temp_lendingPool = "0xbB453271D443c8169Ee47D65BDBa7082C0b7767D" as Address;
   temp_lendingPoolSequencer =
-    "0xC5711CccD5f420ED4356d4d19a8c9E31572f09f2" as Address;
-  temp_position = "0x72e06B77BEE9E2093f831B9494cD1e32Ae0Ad1dd" as Address;
+    "0x084932f82db43cE34CDc9AB9815DB04f414f4f5F" as Address;
+  temp_position = "0x528212Fd0ccFB0C93F0e7b1F906aeecaB6FADE99" as Address;
 } else {
 /****************************************************************************** */
   temp_mockWeth = "0x689c1eF623a32D7d11296265013f42C7973Fda86" as Address;
@@ -56,6 +55,7 @@ export const mockWeth = temp_mockWeth;
 export const mockWbtc = temp_mockWbtc;
 export const mockUsdc = temp_mockUsdc;
 export const mockUsdt = temp_mockUsdt;
+export const idrxTestnet = temp_idrxTestnet;
 export const mockPepe = temp_mockPepe;
 export const mockBnvda = temp_mockBnvda;
 export const mockSaapl = temp_mockSaapl;

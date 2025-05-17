@@ -2,8 +2,8 @@ export async function fetchTransactionData() {
   try {
     const response = await fetch(
       // "https://caer-finance-sequencer.vercel.app/api/borrow"
-      "https://caerfi-solver.vercel.app/api/borrow"
-      // "http://localhost:4000/api/borrow"
+      // "https://caerfi-solver.vercel.app/api/borrow"
+      "https://caer-solver-lisk.vercel.app/api/borrow",
     );
     if (!response.ok) {
       throw new Error("Failed to fetch transaction data");

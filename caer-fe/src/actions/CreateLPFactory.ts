@@ -45,6 +45,7 @@ export const createLPFactory = async (
   let poolAddress: [string, string, string];
   let poolCount: bigint;
   try {
+    await new Promise((resolve) => setTimeout(resolve, 5000));
     poolCount = (await publicClient.readContract({
       address: factory,
       abi: factoryAbi,

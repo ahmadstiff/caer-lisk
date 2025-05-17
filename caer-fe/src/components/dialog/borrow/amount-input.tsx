@@ -20,7 +20,7 @@ export default function AmountInput({
   };
 
   const tokenImage = TOKEN_OPTIONS.find(
-    (option) => option.name === token
+    (option) => option.name === token 
   )?.logo;
 
   return (

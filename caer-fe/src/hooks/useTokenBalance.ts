@@ -9,10 +9,12 @@ import {
   mockWbtc,
   mockUsdt,
   chain_id,
+  idrxTestnet,
 } from "@/constants/addresses";
 import { Address, createPublicClient, erc20Abi, http } from "viem";
 import { liskChain } from "@/lib/data/chain-data";
 import { optimismSepolia } from "viem/chains";
+import { idrxAbi } from "@/lib/abi/idrxAbi";
 export const useTokenBalance = (tokenAddress: Address, decimals: number) => {
   const { address } = useAccount();
   const [balance, setBalance] = useState("0");
@@ -84,6 +86,26 @@ export const useUsdcBalance = () => {
   useEffect(() => {
     if (data) {
       const formattedBalance = parseFloat(formatUnits(BigInt(data), 6));
+      setBalance(formattedBalance.toString());
+    }
+  }, [data]);
+
+  return balance;
+};
+export const useIdrxBalance = () => {
+  const { address } = useAccount();
+  const [balance, setBalance] = useState("0");
+
+  const { data, isLoading } = useReadContract({
+    abi: idrxAbi,
+    address: idrxTestnet,
+    functionName: "balanceOf",
+    args: address ? [address] : undefined,
+  });
+
+  useEffect(() => {
+    if (data) {
+      const formattedBalance = parseFloat(formatUnits(BigInt(data), 2));
       setBalance(formattedBalance.toString());
     }
   }, [data]);

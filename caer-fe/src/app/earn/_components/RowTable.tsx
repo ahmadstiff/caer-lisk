@@ -16,14 +16,16 @@ const RowTable = (props: RowTableProps) => {
   const getTokenName = (address: string) => {
     return TOKEN_OPTIONS.find((token) => token?.address === address)?.name;
   };
-
+  const getTokenDecimals = (address: string) => {
+    return TOKEN_OPTIONS.find((token) => token?.address === address)?.decimals;
+  };
   const fetchLiquidity = async (lpAddress: string) => {
     const data = await readLendingData(lpAddress as `0x${string}`);
     let liquidityValue;
     if (typeof data.message === "string") {
       liquidityValue = data.message;
     } else {
-      liquidityValue = Number(data.message) !== 0 ? Number(data.message) / 1e6 : "0.00";
+      liquidityValue = Number(data.message) !== 0 ? Number(data.message) / (10 ** Number(getTokenDecimals(props.borrowToken))) : "0.00";
     }
     setLiquidity(liquidityValue);
   };
