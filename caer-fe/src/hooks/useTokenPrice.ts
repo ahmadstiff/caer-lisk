@@ -47,10 +47,13 @@ export const usePriceTrade = (
     functionName: "getPriceTrade",
     args: [fromTokenAddress, toTokenAddress],
   });
-
+  const getTokenDecimals = (tokenAddress: Address) => {
+    const token = TOKEN_OPTIONS.find((token) => token.address === tokenAddress);
+    return token?.decimals ?? 18;
+  };
   // Extract prices from the tuple returned by getPriceTrade
-  const fromPrice = data && Array.isArray(data) ? Number(data[0]) / 10 ** 6 : 0;
-  const toPrice = data && Array.isArray(data) ? Number(data[1]) / 10 ** 6 : 0;
+  const fromPrice = data && Array.isArray(data) ? Number(data[0]) / 10 ** getTokenDecimals(fromTokenAddress) : 0;
+  const toPrice = data && Array.isArray(data) ? Number(data[1]) / 10 ** getTokenDecimals(toTokenAddress) : 0;
 
   return {
     fromPrice,
