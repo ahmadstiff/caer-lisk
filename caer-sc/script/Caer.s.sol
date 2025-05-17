@@ -11,6 +11,7 @@ import {MockUSDT} from "../src/MockUSDT.sol";
 import {MockBNVDA} from "../src/MockBNVDA.sol";
 import {MockSAAPL} from "../src/MockSAAPL.sol";
 import {MockPAXG} from "../src/MockPAXG.sol";
+import {MockIDRX} from "../src/MockIDRX.sol";
 
 import {PriceFeed} from "../src/PriceFeed.sol";
 
@@ -28,7 +29,8 @@ contract CaerScript is Script {
     MockBNVDA public mockBNVDA;
     MockSAAPL public mockSAAPL;
     MockPAXG public mockPAXG;
-
+    MockIDRX public mockIDRX;
+    
     PriceFeed public priceFeed;
 
     LendingPoolFactory public lendingPoolFactory;
@@ -43,7 +45,7 @@ contract CaerScript is Script {
         // vm.createSelectFork(vm.rpcUrl("cachain_sepolia"));
         // vm.createSelectFork(vm.rpcUrl("educhain"));
         // vm.createSelectFork(vm.rpcUrl("pharos_devnet"));
-        // vm.createSelectFork(vm.rpcUrl("op_sepolia"));
+        // vm.createSelectFork(vm.rpcUrl("lisk_sepolia"));
     }
 
     function run() public {
@@ -58,7 +60,8 @@ contract CaerScript is Script {
         mockBNVDA = new MockBNVDA();
         mockSAAPL = new MockSAAPL();
         mockPAXG = new MockPAXG();
-
+        mockIDRX = new MockIDRX();
+        
         priceFeed = new PriceFeed();
         lendingPoolFactory = new LendingPoolFactory(address(priceFeed));
         lendingPool = new LendingPool(address(mockWETH), address(mockUSDC), address(priceFeed), 7e17);
@@ -74,6 +77,7 @@ contract CaerScript is Script {
         console.log("export const mockBnvda = ", address(mockBNVDA));
         console.log("export const mockSaapl = ", address(mockSAAPL));
         console.log("export const mockPaxg = ", address(mockPAXG));
+        console.log("export const mockIdrx = ", address(mockIDRX));
         console.log("export const priceFeed = ", address(priceFeed));
         console.log("export const factory = ", address(lendingPoolFactory));
         console.log("export const lendingPool = ", address(lendingPool));
