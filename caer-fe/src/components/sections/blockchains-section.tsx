@@ -7,7 +7,7 @@ export default function BlockchainsSection() {
     { name: "Ethereum", image: "/eth2.jpg" },
     { name: "Lisk", image: "/lisk-logo.png" },
     { name: "Polygon", image: "/polygon.png" },
-    { name: "Base", image: "/Base-logo.png" },
+    { name: "Base", image: "/base-logo.png" },
     { name: "Pharos", image: "/pharos-logo.jpg" },
     { name: "BNB", image: "/bnb.png" },
     { name: "Arbitrum", image: "/arbitrum-arb-logo.png" },
