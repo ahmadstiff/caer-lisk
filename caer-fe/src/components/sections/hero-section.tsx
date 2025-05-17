@@ -112,7 +112,7 @@ export default function HeroSection() {
           className="border-[#01ECBE] bg-[#ffffff2e] text-[#07094d] hover:bg-[#01ECBE]/10 px-6 py-6 text-md rounded-xl cursor-pointer"
           asChild
         >
-          <Link href="https://caer-finance.gitbook.io/caer-finance/" target="_blank" rel="noopener noreferrer">
+          <Link href="https://caer-finance-on-lisk.gitbook.io/caer-finance-docs" target="_blank" rel="noopener noreferrer">
             View Docs
           </Link>
         </Button>
