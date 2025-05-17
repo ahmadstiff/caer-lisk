@@ -34,7 +34,7 @@ export const BackgroundBeams = ({
   return (
     <div
       ref={beamsRef}
-      className={cn("h-full w-full bg-white flex items-center justify-center overflow-hidden rounded-md", className)}
+      className={cn("h-full w-full flex items-center justify-center overflow-hidden rounded-md", className)}
     >
       <svg className="absolute inset-0 z-0 opacity-50" width="100%" height="100%">
         <defs>

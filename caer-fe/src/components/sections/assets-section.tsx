@@ -5,24 +5,21 @@ import { SectionTitle } from "@/components/ui/section-title"
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card"
 import { Badge } from "@/components/ui/badge"
 
+
 export default function AssetsSection() {
   const assets = [
-    { name: "ETH", apy: "4.5%", chain: "Ethereum" },
-    { name: "USDC", apy: "8.2%", chain: "Polygon" },
-    { name: "BTC", apy: "3.7%", chain: "Ethereum" },
-    { name: "SOL", apy: "5.9%", chain: "Solana" },
-    { name: "AVAX", apy: "7.1%", chain: "Avalanche" },
-    { name: "MATIC", apy: "9.3%", chain: "Polygon" },
-    { name: "DOT", apy: "11.2%", chain: "Polkadot" },
-    { name: "ATOM", apy: "10.5%", chain: "Cosmos" },
-    { name: "NEAR", apy: "8.7%", chain: "NEAR" },
-    { name: "BNB", apy: "6.4%", chain: "BSC" },
-    { name: "OP", apy: "12.3%", chain: "Optimism" },
-    { name: "ARB", apy: "11.8%", chain: "Arbitrum" },
+    { name: "IDRX", apy: "7.1%", chain: "Lisk", image: "/idrx.png" },
+    { name: "GIDR", apy: "10.5%", chain: "Polygon", image: "/gidr.png" },
+    { name: "ETH", apy: "4.5%", chain: "Ethereum", image: "/eth2.jpg" },
+    { name: "USDC", apy: "8.2%", chain: "Arbitrum", image: "/usdc.png" },
+    { name: "USDT", apy: "3.7%", chain: "Base", image: "/usdt.png" },
+    { name: "USDE", apy: "5.9%", chain: "Polygon", image: "/usde.png" },
+    { name: "WBTC", apy: "9.3%", chain: "Lisk", image: "/wbtc.png" },
+    { name: "WETH", apy: "11.2%", chain: "Lisk", image: "/weth.png" },
   ]
 
   return (
-    <section className="py-20 px-4 md:px-8 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-20 px-4 md:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         <SectionTitle
           badge={{ text: "Diverse Assets", className: "bg-[#141beb] text-white hover:bg-[#141beb]/80" }}
@@ -37,14 +34,6 @@ export default function AssetsSection() {
           transition={{ duration: 0.5 }}
         >
           <Tabs defaultValue="lending" className="w-full">
-            <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8">
-              <TabsTrigger value="lending" className="text-lg">
-                Lending
-              </TabsTrigger>
-              <TabsTrigger value="borrowing" className="text-lg">
-                Borrowing
-              </TabsTrigger>
-            </TabsList>
             <TabsContent value="lending">
               <motion.div
                 className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
@@ -69,10 +58,11 @@ export default function AssetsSection() {
                               className="w-10 h-10 rounded-full bg-[#f8f9fa] flex items-center justify-center"
                             >
                               <img
-                                src={`/placeholder.svg?height=40&width=40&text=${asset.name}`}
+                                src={asset.image}
                                 alt={asset.name}
                                 className="w-8 h-8 object-contain"
                               />
+
                             </CardItem>
                             <CardItem translateZ="30" className="text-lg text-[#07094d] font-bold">
                               {asset.name}
@@ -120,7 +110,7 @@ export default function AssetsSection() {
                               className="w-10 h-10 rounded-full bg-[#f8f9fa] flex items-center justify-center"
                             >
                               <img
-                                src={`/placeholder.svg?height=40&width=40&text=${asset.name}`}
+                                src={`/placeholder.svg?height=40&width=40&text=${asset.image}`}
                                 alt={asset.name}
                                 className="w-8 h-8 object-contain"
                               />

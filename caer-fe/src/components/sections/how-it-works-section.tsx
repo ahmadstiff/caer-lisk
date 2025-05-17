@@ -28,7 +28,7 @@ export default function HowItWorksSection() {
   ];
 
   return (
-    <section className="py-20 px-4 md:px-8 bg-gray-50">
+    <section className="py-20 px-4 md:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         <SectionTitle
           badge={{

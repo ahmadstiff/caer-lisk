@@ -26,7 +26,7 @@ export default function HeroSection() {
     },
     {
       text: "LISK.",
-      className: "text-[#131BEB]",
+      className: "text-[#FE5D26]",
     },
   ]
 
@@ -54,22 +54,37 @@ export default function HeroSection() {
   }
 
   return (
+
     <motion.div
       className="flex items-center justify-center w-full flex-col px-4 min-h-screen overflow-hidden relative z-10"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
     >
+      {/* Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="w-[150px] ml-4" // ml-4 adds spacing between text and video
+      >
+        <source src="/lisk.webm" type="video/webm" />
+        Your browser does not support the video tag.
+      </video>
       <motion.h2
-        className="bg-clip-text text-center text-[#07094d] bg-gradient-to-b from-[#07094d] to-[#141beb] dark:from-[#07094d] dark:to-[#141beb] text-2xl md:text-4xl font-sans relative z-20 font-bold tracking-tight"
+        className="bg-clip-text text-center text-[#07094d] bg-gradient-to-b from-[#07094d] to-[#141beb] text-2xl md:text-4xl font-sans relative z-20 font-bold tracking-tight"
         variants={itemVariants}
       >
         <TextHoverEffect text="CAER FINANCE" />
       </motion.h2>
 
-      <motion.div variants={itemVariants}>
-        <TypewriterEffectSmooth words={words} className="mx-auto text-center" />
+      <motion.div variants={itemVariants} className="flex items-center justify-center">
+        {/* Text */}
+        <TypewriterEffectSmooth words={words} className="text-center" />
+
       </motion.div>
+
 
       <motion.div variants={itemVariants} className="max-w-xl text-center mt-6 mb-8">
         <TextGenerateEffect
