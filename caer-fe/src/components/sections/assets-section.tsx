@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge"
 export default function AssetsSection() {
   const assets = [
     { name: "IDRX", apy: "7.1%", chain: "Lisk", image: "/idrx.png" },
-    { name: "GIDR", apy: "10.5%", chain: "Polygon", image: "/gidr.png" },
+    { name: "PAXG", apy: "10.5%", chain: "Polygon", image: "/paxg.png" },
     { name: "ETH", apy: "4.5%", chain: "Ethereum", image: "/eth2.jpg" },
     { name: "USDC", apy: "8.2%", chain: "Arbitrum", image: "/usdc.png" },
     { name: "USDT", apy: "3.7%", chain: "Base", image: "/usdt.png" },
